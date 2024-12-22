@@ -14,11 +14,12 @@ import static common.BuildYml.getDownloadedBuild;
 import static common.BuildYml.updateBuildNumber;
 
 public class UpdateVias {
+
     private static String name;
     private static String directory;
     private static String branch;
 
-    public static boolean updateVia(String viaName, String dataDirectory, boolean isDev, boolean isJava8) throws IOException {
+    public static void updateVia(String viaName, String dataDirectory, boolean isDev, boolean isJava8) throws IOException {
         name = viaName.replace("ViaRewind%20Legacy%20Support-Dev", "ViaRewind%20Legacy%20Support%20DEV");
         directory = dataDirectory;
 
@@ -31,14 +32,11 @@ public class UpdateVias {
         if (getDownloadedBuild(name) == -1) {
             downloadUpdate(name);
             updateBuildNumber(name, getLatestBuild());
-            System.out.println(name + " was downloaded for the first time. Please restart to let the plugin take effect.");
-            return true;
+            System.out.println(name + " was downloaded for the first time.");
         } else if (getDownloadedBuild(name) != getLatestBuild()) {
             downloadUpdate(name);
             updateBuildNumber(name, getLatestBuild());
-            return true;
         }
-        return false;
     }
 
     public static int getLatestBuild() throws IOException {

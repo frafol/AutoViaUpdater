@@ -36,25 +36,3 @@ ViaRewind-Legacy:
   # Enable or disable dev builds. (https://ci.viaversion.com/view/ViaRewind/job/ViaRewind%20Legacy%20Support-DEV/)
   # NOTE: Before you enable dev builds, please check when dev builds were last updated in the link, MIGHT be really OUTDATED
   dev: false
-
-# Check-Interval setting
-# The interval (in minutes) to check for updates
-Check-Interval: 60
-
-# Experimental Cron Support
-# Example "0 0 * * *" is daily at midnight
-# Leave it blank "" to disable and use the Check-Interval
-Cron-Expression: ""
-
-# The number of seconds to wait after the server has fully loaded before starting the update checking process.
-# Setting this value too low may cause errors.
-# If errors occur while loading vias, try setting this value to 60 seconds or higher.
-Delay: 5
-
-# AutoRestart settings
-# AutoRestart is whether the server will restart after an update
-# AutoRestart-Delay is the delay in seconds before restarting
-# AutoRestart-Message is the message that will be broadcasted before restarting
-AutoRestart: false
-AutoRestart-Delay: 60
-AutoRestart-Message: '&cServer is restarting in 1 minute!'
